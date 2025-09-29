@@ -90,7 +90,7 @@ module.exports.run = async function ({
       let page = 1;
       let start = (page - 1) * pages;
       let end = start + pages;
-      let helpMessage = `📚 𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝗦 𝗚𝗨𝗜𝗗𝗘:\n\n====『 𝗖𝗢𝗠𝗠𝗔𝗡𝗗 𝗟𝗜𝗦𝗧 』====\n▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱\n\n`;
+      let helpMessage = `📚 𝗖𝗢𝗠𝗠𝗔𝗡𝗗𝗦 𝗚𝗨𝗜𝗗𝗘:\n▱▱▱▱▱▱▱▱▱▱▱▱▱▱▱\n\n`;
       for (let i = start; i < Math.min(end, commands.length); i++) {
         helpMessage += `〔${formatFont(String(i + 1))}〕${formatFont(commands[i])} \n`;
 }
@@ -98,7 +98,7 @@ module.exports.run = async function ({
      eventCommands.forEach((eventCommand, index) => {
         helpMessage += `〔${formatFont(String(index + 1))}〕 ${formatFont(eventCommand)} \t\n`;
 });
-      helpMessage += `\n📖𝗣𝗮𝗴𝗲: <${page}/${Math.ceil(commands.length / pages)}>\nTo view information about a specific command, type '${prefix}help command name.\n\n📋𝗧𝗢𝗧𝗔𝗟 𝗖𝗠𝗗𝗦: ${commands.length}\n𝗔𝗨𝗧𝗢𝗕𝗢𝗧: kyle-autobot-educational-chatbot0.1\n\n📌𝗥𝗔𝗡𝗗𝗢𝗠 𝗙𝗔𝗖𝗧: ${randomQuote}`;
+      helpMessage += `\n📖𝗣𝗮𝗴𝗲: <${page}/${Math.ceil(commands.length / pages)}>\nTo view information about a specific command, type '${prefix}help command name.\n\n📋𝗧𝗢𝗧𝗔𝗟 𝗖𝗠𝗗𝗦: ${commands.length}\n\n📌𝗥𝗔𝗡𝗗𝗢𝗠 𝗙𝗔𝗖𝗧: ${randomQuote}`;
       api.sendMessage(helpMessage, event.threadID, event.messageID);
     } else if (!isNaN(input)) {
       const page = parseInt(input);
