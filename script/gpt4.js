@@ -5,7 +5,7 @@ module.exports.config = {
   version: '1.0.0',
   role: 0,
   hasPrefix: false,
-  aliases: ['ai', 'assistant', 'ask'],
+  aliases: ['assistant', 'ask'],
   description: "Chat with ChatGPT-4 API",
   usage: "chatgpt [your question]",
   credits: 'Vern',
